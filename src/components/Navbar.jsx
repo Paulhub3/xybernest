@@ -55,14 +55,52 @@ const Navbar = () => {
         }
     };
 
+    const closeMenu = () => {
+        if (mobileMenuOpen) {
+            // Start exit animation
+            setMenuAnimation('exiting');
+            // Delay the actual closing
+            setTimeout(() => {
+                setMobileMenuOpen(false);
+                setMenuAnimation('');
+            }, 300); // Match this with animation duration
+        }
+    };
+
+
+    const handleNavClick = (e, href) => {
+        e.preventDefault();
+        
+        // Extract the section ID from the href
+        const sectionId = href.split('#')[1];
+        
+        // Find the target element
+        const targetElement = document.getElementById(sectionId);
+        
+        if (targetElement) {
+          // Smooth scroll to the element
+          targetElement.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+          
+          // Update URL without page reload (optional)
+          window.history.pushState(null, '', `/#${sectionId}`);
+
+           // Close mobile menu if it's open
+           closeMenu();
+        }
+    };
+      
+
     // Dynamic background class based on scroll position
     const navbarBackgroundClass = isOverWhiteSection 
         ? "backdrop-blur-lg bg-black/30" 
         : "backdrop-blur-lg bg-white/30";
 
     return (
-        <nav ref={navbarRef} className={`sticky top-6 md:top-10 z-50 py-3 ${navbarBackgroundClass} mx-4 md:mx-16 lg:mx-24 rounded-md transition-colors duration-300`}>
-            <div className="container mx-auto px-4 relative text-sm">
+        <nav ref={navbarRef} className={` fixed w-full px-4 top-0 md:top-6 z-50 py-3 mx-auto `}>
+            <div className={`container mx-auto  px-4 md:px-12 py-3 relative text-sm  ${navbarBackgroundClass} rounded-md transition-colors duration-300`}>
                 <div className="flex items-center justify-between md:py-4">
                     {/* Logo */}
                     <div className="flex items-center flex-shrink-0">
@@ -73,14 +111,14 @@ const Navbar = () => {
                     <ul className="hidden lg:flex space-x-12">
                         {navItems.map((item, index) => (
                             <li key={index}>
-                                <a href={item.href} className="text-white hover:text-gray-300 transition-colors duration-300 font-semibold text-sm">{item.label}</a>
+                                <a href={item.href} onClick={(e) => {handleNavClick(e, item.href);}}  className="text-white hover:text-gray-300 transition-colors duration-300 font-semibold text-sm">{item.label}</a>
                             </li>
                         ))}
                     </ul>
                     
                     {/* Contact us Button */}
                     <div className="hidden lg:flex justify-center space-x-12 items-center">
-                        <a href="#" className="bg-white text-[#1992a7] px-4 py-3 font-semibold rounded flex">Contact us <span className='ml-2'><Send size={20}/></span></a>
+                        <a href="#contact" className="bg-white text-[#1992a7] px-4 py-3 font-semibold rounded flex">Contact us <span className='ml-2'><Send size={20}/></span></a>
                     </div>
                     
                     {/* Mobile Menu Button */}
@@ -97,12 +135,12 @@ const Navbar = () => {
                         <ul>
                             {navItems.map((item, index) => (
                                 <li key={index} className='py-4 text-center'>
-                                    <a href={item.href} className="text-black hover:text-gray-300 transition-colors duration-300 font-semibold text-sm">{item.label}</a>
+                                    <a href={item.href}  onClick={(e) => handleNavClick(e, item.href)} className="text-black hover:text-gray-300 transition-colors duration-300 font-semibold text-sm">{item.label}</a>
                                 </li>
                             ))}
                         </ul>
                         <div className="mt-8">
-                            <a href="#" className="bg-white text-[#1992a7] px-4 py-3 font-semibold rounded flex">Contact us <span className='ml-2'><Send size={20}/></span></a>
+                            <a href="#contact" className="bg-white text-[#1992a7] px-4 py-3 font-semibold rounded flex">Contact us <span className='ml-2'><Send size={20}/></span></a>
                         </div>
                     </div>
                 )}

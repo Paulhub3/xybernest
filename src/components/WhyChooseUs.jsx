@@ -22,7 +22,7 @@ const WhyChooseUs = () => {
   };
 
   return (
-    <div className="w-full bg-white text-black py-16 px-4 lg:-mt-32 lg:z-20 lg:relative">
+    <div id="why-choose-xybernest" className="w-full bg-white text-black py-16 px-4 lg:-mt-32 lg:z-20 lg:relative">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row gap-8 px-6 md:px-4">
           {/* Left Column - Why Choose Us Points - Animated from left */}

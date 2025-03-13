@@ -42,7 +42,7 @@ const HeroSection = () => {
     <>
     {/* Inject animation styles */}
     <style dangerouslySetInnerHTML={{ __html: animationStyles }} />
-    <div className="relative w-full h-screen overflow-hidden -mt-16 md:-mt-32">
+    <div className="relative w-full h-screen md:h-[1000px] overflow-hidden -mt-16 md:-mt-32">
       {/* Gradient Background Image */}
       <div 
         className="absolute inset-0 w-full h-full bg-cover bg-center" 
@@ -75,7 +75,7 @@ const HeroSection = () => {
        <div className="absolute inset-0 bg-black/35 z-5"></div>
       
       {/* Content Container */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full px-2.5 md:px-4  text-center text-white max-w-6xl mx-auto mt-12 md:mt-0">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-2.5 md:px-4  text-center text-white max-w-6xl mx-auto mt-12">
         {/* Desktop Text */}
         <h2 className="text-3xl md:text-5xl lg:text-6xl font-light mb-4 leading-tight">
           <div className="items-center">
@@ -92,11 +92,11 @@ const HeroSection = () => {
           to providing comprehensive solutions across diverse sectors.
         </p>
         
-        <button className="flex items-center bg-white/30 hover:bg-gray-700/50 text-white py-3 px-6 rounded-md transition duration-300 backdrop-blur-lg font-bold md:text-sm text-xs">
+        <a href="#contact" className="flex items-center bg-white/30 hover:bg-gray-700/50 text-white py-3 px-6 rounded-md transition duration-300 backdrop-blur-lg font-bold md:text-sm text-xs">
           Connect with Xynerbest
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right ml-2">
           <path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-        </button>
+        </a>
       </div>
     </div>
     </>

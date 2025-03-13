@@ -32,7 +32,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="w-full relative bg-[#147D92]  overflow-hidden">
+    <div id="contact" className="w-full relative bg-[#147D92]  overflow-hidden">
       {/* Background image with futuristic HUD */}
       <div className="absolute inset-0 z-0">
         <img 

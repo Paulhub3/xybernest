@@ -12,7 +12,7 @@ const OurExpertise = () => {
   };
 
   return (
-    <div className="w-full bg-gray-100 py-8 md:py-16">
+    <div id="expertise" className="w-full bg-gray-100 py-8 md:py-16">
       <div className="w-11/12 mx-auto px-2 sm:px-4 h-full">
         <div className="w-full rounded-xl overflow-hidden bg-gradient-to-br from-teal-600 via-teal-500 to-blue-500">
           <div className="p-6 sm:p-8 md:p-12 flex flex-col md:flex-row gap-16 md:gap-10">
@@ -170,10 +170,10 @@ const OurExpertise = () => {
               
               {/* Contact us button */}
               <div className="mt-6 md:mt-8">
-                <button className="bg-white/40 hover:bg-gray-700/50 backdrop-blur-lg transition-colors text-white rounded-md px-4 sm:px-5 py-2 sm:py-3 flex items-center gap-2 font-bold text-xs sm:text-sm">
+                <a href="#contact" className="bg-white/40 w-40 hover:bg-gray-700/50 backdrop-blur-lg transition-colors text-white rounded-md px-4 sm:px-5 py-2 sm:py-3 flex items-center gap-2 font-bold text-xs sm:text-sm">
                   Contact us
                   <ArrowUpRight size={16} className="sm:w-[18px] sm:h-[18px]" />
-                </button>
+                </a>
               </div>
             </div>
           </div>

@@ -4,9 +4,9 @@ import comma from '../assets/comma.png';
 
 const AboutUs = () => {
   return (
-    <div className="w-full bg-[#1E1E1E] text-white overflow-hidden">   
+    <div id="about" className="w-full bg-[#1E1E1E] text-white overflow-hidden">   
       {/* Main content section - matching the exact dimensions */}
-      <div className="max-w-screen-xl md:mx-auto pt-24 pb-16 px-2.5 lg:px-8 relative z-10">
+      <div className="max-w-screen-xl md:mx-auto pt-16 pb-16 px-2.5 lg:px-8 relative z-10">
         {/* Content with border - exact as shown in image */}
         <div className="">
           <div className="flex flex-col space-y-24 md:flex-row md:space-y-0">
@@ -33,6 +33,7 @@ const AboutUs = () => {
               
               {/* Get In Touch button with exact styling */}
               <div className="mt-8 md:mt-16">
+                <a href="#contact">
                 <Motion.button 
                   className="bg-gray-800 text-white rounded px-6 py-3 inline-flex items-center gap-2 text-sm md:text-base"
                   whileHover={{ scale: 1.05 }}
@@ -42,6 +43,7 @@ const AboutUs = () => {
                   Get In Touch
                   <ArrowUpRight size={18} />
                 </Motion.button>
+                </a>
               </div>
             </Motion.div>
             
