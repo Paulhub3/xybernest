@@ -42,7 +42,7 @@ const HeroSection = () => {
     <>
     {/* Inject animation styles */}
     <style dangerouslySetInnerHTML={{ __html: animationStyles }} />
-    <div className="relative w-full h-screen md:h-[1000px] overflow-hidden -mt-16 md:-mt-32">
+    <div className="relative w-full h-screen md:h-[1200px] overflow-hidden -mt-16 md:-mt-32">
       {/* Gradient Background Image */}
       <div 
         className="absolute inset-0 w-full h-full bg-cover bg-center" 
